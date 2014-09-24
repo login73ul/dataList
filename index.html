@@ -38,12 +38,12 @@
 				<thead>
 					<tr>
 						<th><input type="checkbox" value=""></th>
-						<th>Код</th>
-						<th>Наименование документа</th>
+						<th><a href="" ng-click="predicate = 'key'">Код</a></th>
+						<th><a href="" ng-click="predicate = 'data'">Наименование документа</a></th>
 					</tr>
 				</thead>
 				<tbody>
-					<tr ng-repeat="list in dataList.lists | filter: dataList.dataText track by $index">
+					<tr ng-repeat="list in dataList.lists | filter: dataList.dataText | orderBy: predicate track by $index">
 						<td><input type="checkbox" ng-model="list.del"></td>
 						<td>{{list.key}}</td>
 						<td>{{list.data}}</td>
