@@ -37,7 +37,7 @@
 			<table class="table table-bordered">
 				<thead>
 					<tr>
-						<th><input type="checkbox" value=""></th>
+						<th><input type="checkbox" ng-model="dataList.checkAll" ng-click="dataList.checked()" value=""></th>
 						<th><a href="" ng-click="predicate = 'key'">Код</a></th>
 						<th><a href="" ng-click="predicate = 'data'">Наименование документа</a></th>
 					</tr>

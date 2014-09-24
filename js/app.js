@@ -4,6 +4,14 @@
 		
 		this.lists = JSON.parse(localStorage.getItem('lists')) || [];
 		this.index = parseInt(localStorage.getItem('index')) || 0;
+		this.checkAll = false;
+		var scope = this;
+		
+		this.checked = function() {
+			angular.forEach(scope.lists, function(item) {
+				item.del = !scope.checkAll;
+			});
+		};
 		
 		this.addToList = function() {
 			this.index += 1;
